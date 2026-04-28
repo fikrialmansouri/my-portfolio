@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فكري المنصوري | مطور ويب</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        * { box-sizing: border-box; transition: 0.3s; }
+        body { font-family: 'Cairo', sans-serif; background-color: #0f172a; color: #f8fafc; margin: 0; padding: 0; text-align: center; }
+        .hero { padding: 80px 20px; }
+        .hero h1 { font-size: 3.5em; background: linear-gradient(to right, #8b5cf6, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .btn { display: inline-flex; align-items: center; background: linear-gradient(135deg, #8b5cf6, #6366f1); color: white !important; padding: 15px 40px; text-decoration: none; border-radius: 50px; font-weight: bold; margin-top: 20px; }
+        .services { padding: 50px 20px; }
+        .service-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; max-width: 1000px; margin: 0 auto; }
+        .service-card { background: #1e293b; padding: 30px; border-radius: 20px; border: 1px solid #334155; cursor: pointer; }
+        .service-card:hover { border-color: #8b5cf6; transform: translateY(-10px); }
+        #modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; justify-content: center; align-items: center; }
+        .modal-content { background: #1e293b; padding: 40px; border-radius: 20px; max-width: 400px; border: 2px solid #8b5cf6; }
+        .btn-order { display: inline-block; background: #8b5cf6; color: white !important; padding: 12px 30px; text-decoration: none; border-radius: 50px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1>Fikri Al-Mansouri</h1>
+        <p>مطور ويب احترافي، أساعدك في بناء موقعك الرقمي.</p>
+        <a href="https://wa.me/966501234567" class="btn" target="_blank"><i class="fab fa-whatsapp" style="margin-left:10px"></i> تواصل معي عبر واتساب</a>
+    </section>
+
+    <section class="services">
+        <h2>خدماتي</h2>
+        <div class="service-container">
+            <div class="service-card" onclick="openModal('تطوير المواقع', 'برمجة مواقع كاملة من الصفر بجودة عالية وكود نظيف.')">
+                <h3>💻 تطوير المواقع</h3>
+                <p>اضغط للتفاصيل</p>
+            </div>
+            <div class="service-card" onclick="openModal('تطوير ووردبريس', 'تصميم متاجر ومواقع إخبارية بإدارة سهلة.')">
+                <h3>✨ ووردبريس</h3>
+                <p>اضغط للتفاصيل</p>
+            </div>
+            <div class="service-card" onclick="openModal('تصميم متجاوب', 'تجربة مستخدم ممتازة على الجوال والكمبيوتر.')">
+                <h3>📱 تصميم متجاوب</h3>
+                <p>اضغط للتفاصيل</p>
+            </div>
+            <div class="service-card" onclick="openModal('سرعة الأداء', 'تحسين سرعة الموقع لضمان تجربة زوار سريعة.')">
+                <h3>🚀 سرعة الأداء</h3>
+                <p>اضغط للتفاصيل</p>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal">
+        <div class="modal-content">
+            <h2 id="modal-title"></h2>
+            <p id="modal-desc"></p>
+            <a id="order-link" href="#" class="btn-order" target="_blank">اطلب الخدمة الآن</a>
+            <br>
+            <button onclick="document.getElementById('modal').style.display='none'" style="margin-top:20px; background:none; border:none; color:gray; cursor:pointer;">إغلاق</button>
+        </div>
+    </div>
+
+    <script>
+        function openModal(title, desc) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = desc;
+            document.getElementById('order-link').href = "https://wa.me/966501234567?text=مرحبا فكري، أريد طلب خدمة: " + title;
+            document.getElementById('modal').style.display = 'flex';
+        }
+    </script>
+</body>
+</html>
